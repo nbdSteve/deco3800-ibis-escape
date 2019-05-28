@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class OnCollision : MonoBehaviour
 {
-    void OnCollisionEnter(Collision col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(col.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
-            Destroy(col.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
