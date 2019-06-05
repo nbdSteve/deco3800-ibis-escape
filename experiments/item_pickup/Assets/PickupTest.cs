@@ -20,9 +20,14 @@ namespace Tests
         [UnityTest]
         public IEnumerator PickupTestWithEnumeratorPasses()
         {
-            // Use the Assert class to test conditions.
+            var player = GameObject.FindGameObjectWithTag("Player");
+            var script = new GameObject().AddComponent<OnCollision>();
+
             // Use yield to skip a frame.
             yield return null;
+
+            bool doesObjectExist = player != null;
+            Assert.True(doesObjectExist);
         }
     }
 }
